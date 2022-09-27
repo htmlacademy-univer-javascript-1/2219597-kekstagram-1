@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Арина Купцова](https://up.htmlacademy.ru/univer-js1/1/user/2219597).
-* Наставник: `Неизвестно`.
+* Наставник: [Геннадий Максимов](https://htmlacademy.ru/profile/gennadiy).
 
 ---
 
