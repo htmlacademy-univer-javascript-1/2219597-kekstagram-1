@@ -8,8 +8,8 @@ function getRandomIntInclusive (min, max) {
 }
 getRandomIntInclusive();
 
-function checkLength (str, max_length) {
-  if (str.length <= max_length) {
+function checkLength (str, maxLength) {
+  if (str.length <= maxLength) {
     return true;
   }
   return false;
