@@ -1,4 +1,4 @@
-let const getRandomIntInclusive = (min, max) => {
+function getRandomIntInclusive (min, max) {
   if (min <0 || max <0){
     return 0;
   }
@@ -8,7 +8,7 @@ let const getRandomIntInclusive = (min, max) => {
 }
 getRandomIntInclusive();
 
-let const checkLength = (str, max_length) => {
+function checkLength (str, max_length) {
   if (str.length <= max_length) {
     return true;
   }
