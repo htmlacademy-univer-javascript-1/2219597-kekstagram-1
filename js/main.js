@@ -39,7 +39,7 @@ const getRandomPositiveInteger = (a, b) => {
 };
 
 const checkStringLength = (string, length) => {
-  return string.length <= length;
+  string.length <= length;
 };
 
 checkStringLength();
