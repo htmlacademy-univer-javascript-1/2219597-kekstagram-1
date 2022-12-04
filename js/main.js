@@ -13,7 +13,7 @@ const NAMES = [
 
 const USERS_COUNT = 25;
 
-const MESSEGE = [
+const COMMENTS = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
   'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
@@ -22,15 +22,25 @@ const MESSEGE = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!',
 ];
 
+const DESCRIPTION = [
+  'Это я в горах, загораю',
+  'Кому привезти открытку с отпуска?',
+  'Жизнь прекрасна!',
+  'Сегодня думал о смысле жизни, ничего придумать не удалось.',
+  'Обычно здесь что-то пишут, но я пока не придумал',
+  'Моя любимая фотка',
+];
+
 const getRandomPositiveInteger = (a, b) => {
   const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
   const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
   const result = Math.random() * (upper - lower + 1) + lower;
   return Math.floor(result);
-}
+};
+
 const checkStringLength = (string, length) => {
   return string.length <= length;
-}
+};
 
 checkStringLength();
 
