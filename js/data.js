@@ -42,8 +42,9 @@ const getComment = () =>
     name: getRandomArrayElement(NAMES),
   });
 
+let x = 0;
 const createPost = () => {
-  let x = getId();
+  x = getId();
   {
     id: x,
     url: `photos/{{{${x}}}.jpg`,
