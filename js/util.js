@@ -17,9 +17,9 @@ const getId = () => {
   return number;
 };
 
-const getComment = () => {
+const getCommentId = () => {
   numberComment ++;
   return numberComment;
 };
 
-export {getRandomPositiveInteger, getRandomArrayElement, getId, getComment}
+export {getRandomPositiveInteger, getRandomArrayElement, getId, getCommentId};
