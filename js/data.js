@@ -54,6 +54,6 @@ const DESCRIPTION = [
       };
     };
 
-  const createPost = () => Array.from({length: USERS_COUNT}, createUser);
+  const createPosts = () => Array.from({length: USERS_COUNT}, createUser);
 
   export {createPosts}
