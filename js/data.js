@@ -45,7 +45,7 @@ const getComment = () =>
 const createPost = () => {
   {
     id: getId(),
-    url: `photos/{{{${getRandomPositiveInteger(1, 25)}}}}.jpg`,
+    url: `photos/{{{${getRandomPositiveInteger(1, 25)}}}.jpg`,
     description: getRandomArrayElement(DESCRIPTION),
     likes: getRandomPositiveInteger(15, 200),
     comments: Array.from({length: COMMENTS_COUNT}, getComment),
