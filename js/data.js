@@ -34,7 +34,6 @@ const DESCRIPTION = [
   'Моя любимая фотка',
 ];
 
-
   const getComment = () =>
     ({
       id: getCommentId(),
@@ -42,7 +41,6 @@ const DESCRIPTION = [
       message: getRandomArrayElement(COMMENTS),
       name: getRandomArrayElement(NAMES),
     });
-
 
     const createPost = () => {
       return {
@@ -54,6 +52,5 @@ const DESCRIPTION = [
       };
     };
 
-  const createPosts = () => Array.from({length: USERS_COUNT}, createUser);
-
-  export {createPosts}
+  const createPosts = () => Array.from({length: USERS_COUNT}, createPost);
+  export {createPosts};
