@@ -43,7 +43,7 @@ const getComment = () =>
   });
 
 const createPost = () => {
-  return {
+  {
     id: getId(),
     url: `photos/${getRandomPositiveInteger(1, 25)}.jpg`,
     description: getRandomArrayElement(DESCRIPTION),
