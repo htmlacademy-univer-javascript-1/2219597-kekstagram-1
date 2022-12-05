@@ -37,15 +37,15 @@ const DESCRIPTION = [
 const getComment = () =>
   ({
     id: getCommentId(),
-    avatar: 'img/avatar-${getRandomPositiveInteger(1, 6)}.svg',
+    avatar: `img/avatar-${getRandomPositiveInteger(1, 6)}.svg`,
     message: getRandomArrayElement(COMMENTS),
     name: getRandomArrayElement(NAMES),
-});
+  });
 
 const createPost = () => {
   return {
     id: getId(),
-    url: 'photos/{{{${getRandomPositiveInteger(1, 25)}}}.jpg',
+    url: `photos/${getRandomPositiveInteger(1, 25)}.jpg`,
     description: getRandomArrayElement(DESCRIPTION),
     likes: getRandomPositiveInteger(15, 200),
     comments: Array.from({length: COMMENTS_COUNT}, getComment),
