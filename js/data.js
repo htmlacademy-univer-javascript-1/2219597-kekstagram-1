@@ -34,23 +34,23 @@ const DESCRIPTION = [
   'Моя любимая фотка',
 ];
 
-  const getComment = () =>
-    ({
-      id: getCommentId(),
-      avatar: 'img/avatar-${getRandomPositiveInteger(1, 6)}.svg',
-      message: getRandomArrayElement(COMMENTS),
-      name: getRandomArrayElement(NAMES),
-    });
+const getComment = () =>
+  ({
+    id: getCommentId(),
+    avatar: 'img/avatar-${getRandomPositiveInteger(1, 6)}.svg',
+    message: getRandomArrayElement(COMMENTS),
+    name: getRandomArrayElement(NAMES),
+});
 
-    const createPost = () => {
-      return {
-        id: getId(),
-        url: 'photos/{{{${getRandomPositiveInteger(1, 25)}}}.jpg',
-        description: getRandomArrayElement(DESCRIPTION),
-        likes: getRandomPositiveInteger(15, 200),
-        comments: Array.from({length: COMMENTS_COUNT}, getComment),
-      };
-    };
+const createPost = () => {
+  return {
+    id: getId(),
+    url: 'photos/{{{${getRandomPositiveInteger(1, 25)}}}.jpg',
+    description: getRandomArrayElement(DESCRIPTION),
+    likes: getRandomPositiveInteger(15, 200),
+    comments: Array.from({length: COMMENTS_COUNT}, getComment),
+  };
+};
 
-  const createPosts = () => Array.from({length: USERS_COUNT}, createPost);
-  export {createPosts};
+const createPosts = () => Array.from({length: USERS_COUNT}, createPost);
+export {createPosts};
