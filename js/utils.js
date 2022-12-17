@@ -11,7 +11,7 @@ checkStringLength();
 
 const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
 
-let number, numberComment = 0;
+let number = 0;
 const getId = () => {
   number ++;
   return number;
