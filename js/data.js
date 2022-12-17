@@ -1,58 +1,24 @@
-import {getRandomPositiveInteger, getRandomArrayElement, getId, getCommentId} from './util.js';
+import {getRandomPositiveInteger, getRandomArrayElement, id} from './util.js';
+import { NAMES, USERS_COUNT, COMMENTS_COUNT, COMMENTS, DESCRIPTION, MIN_LIKES, MAX_LIKES } from './consts.js';
 
-const NAMES = [
-  'Кирилл',
-  'Софья',
-  'Юлия',
-  'Арина',
-  'Виктор',
-  'Светлана',
-  'Даниил',
-  'Вероника',
-  'Дмитрий',
-  'Алёна',
-];
-
-const USERS_COUNT = 25;
-const COMMENTS_COUNT = 4;
-
-const COMMENTS = [
-  'Всё отлично!',
-  'В целом всё неплохо. Но не всё.',
-  'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
-  'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
-  'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
-  'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!',
-];
-
-const DESCRIPTION = [
-  'Это я в горах, загораю',
-  'Кому привезти открытку с отпуска?',
-  'Жизнь прекрасна!',
-  'Сегодня думал о смысле жизни, ничего придумать не удалось.',
-  'Обычно здесь что-то пишут, но я пока не придумал',
-  'Моя любимая фотка',
-];
-
-const getComment = () =>
+const getComment = (id) =>
   ({
-    id: getCommentId(),
+    id,
     avatar: `img/avatar-${getRandomPositiveInteger(1, 6)}.svg`,
     message: getRandomArrayElement(COMMENTS),
     name: getRandomArrayElement(NAMES),
   });
 
-let x = 0;
-const createPost = () => {
-  x = getId();
+
+const createPost = (id) => {
   return {
-    id: x,
-    url: `photos/{{{${x}}}.jpg`,
+    id,
+    url: `photos/${x}.jpg`,
     description: getRandomArrayElement(DESCRIPTION),
-    likes: getRandomPositiveInteger(15, 200),
-    comments: Array.from({length: COMMENTS_COUNT}, getComment),
+    likes: getRandomPositiveInteger(MIN_LIKES, MAX_LIKES),
+    comments: Array.from({length: getRandomPositiveInteger(COMMENTS_COUNT_MIN, COMMENTS_COUNT_MAX)}, (_, index) => getComment(index + 1));
   };
 };
 
-const createPosts = () => Array.from({length: USERS_COUNT}, createPost);
-export {createPosts};
+const createPosts = () => Array.from({length: USERS_COUNT}).map((_, index) => createPost(index + 1))
+export { createPosts };
