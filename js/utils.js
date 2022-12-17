@@ -17,4 +17,4 @@ const getId = () => {
   return number;
 };
 
-export {getRandomPositiveInteger, getRandomArrayElement, getId()};
+export {getRandomPositiveInteger, getRandomArrayElement, getId};
