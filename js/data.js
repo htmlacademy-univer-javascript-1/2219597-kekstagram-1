@@ -1,15 +1,12 @@
 import {getRandomPositiveInteger, getRandomArrayElement} from './util.js';
 import { NAMES, USERS_COUNT, COMMENTS, DESCRIPTION, MIN_LIKES, MAX_LIKES, COMMENTS_COUNT_MIN, COMMENTS_COUNT_MAX } from './consts.js';
 
-
-
 const getComment = (id) => ({
   id,
   avatar: `img/avatar-${getRandomPositiveInteger(1, 6)}.svg`,
   message: getRandomArrayElement(COMMENTS),
   name: getRandomArrayElement(NAMES),
 });
-
 
 const createPost = (id) => ({
   id,
