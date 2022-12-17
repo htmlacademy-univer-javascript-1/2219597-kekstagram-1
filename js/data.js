@@ -13,11 +13,11 @@ const getComment = (id) =>
 
 
 const createPost = (id) => ({
-    id,
-    url: `photos/${id}.jpg`,
-    description: getRandomArrayElement(DESCRIPTION),
-    likes: getRandomPositiveInteger(MIN_LIKES, MAX_LIKES),
-    comments: Array.from({length: getRandomPositiveInteger(COMMENTS_COUNT_MIN, COMMENTS_COUNT_MAX)}, (_, id) => getComment(id + 1))
+  id,
+  url: `photos/${id}.jpg`,
+  description: getRandomArrayElement(DESCRIPTION),
+  likes: getRandomPositiveInteger(MIN_LIKES, MAX_LIKES),
+  comments: Array.from({length: getRandomPositiveInteger(COMMENTS_COUNT_MIN, COMMENTS_COUNT_MAX)}, (_, index) => getComment(index + 1))
 });
 
 const createPosts = () => Array.from({length: USERS_COUNT}).map((_, id) => createPost(id + 1));
