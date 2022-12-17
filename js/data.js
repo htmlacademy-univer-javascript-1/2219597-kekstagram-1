@@ -3,13 +3,12 @@ import { NAMES, USERS_COUNT, COMMENTS, DESCRIPTION, MIN_LIKES, MAX_LIKES, COMMEN
 
 
 
-const getComment = (id) =>
-  ({
-    id,
-    avatar: `img/avatar-${getRandomPositiveInteger(1, 6)}.svg`,
-    message: getRandomArrayElement(COMMENTS),
-    name: getRandomArrayElement(NAMES),
-  });
+const getComment = (id) => ({
+  id,
+  avatar: `img/avatar-${getRandomPositiveInteger(1, 6)}.svg`,
+  message: getRandomArrayElement(COMMENTS),
+  name: getRandomArrayElement(NAMES),
+});
 
 
 const createPost = (id) => ({
