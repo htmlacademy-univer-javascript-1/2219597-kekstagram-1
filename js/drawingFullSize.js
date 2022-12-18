@@ -19,7 +19,7 @@ const createCommentFragment = (array) => {
   for (const comment of array) {
     const creatingComment = createComment(comment);
     commentFragment.append(creatingComment);
-  };
+  }
   commentList.append(commentFragment);
 };
 
@@ -53,14 +53,13 @@ function onBigPictureEscPress (evt) {
     evt.preventDefault();
     closeBigPicture();
   }
-};
-
+}
 function onBigPictureCloseClick () {
   closeBigPicture();
-};
+}
 
 const drawingFullSize = (bigPhoto) => {
-  openBigPicture = (bigPhoto);
+  openBigPicture (bigPhoto);
   closeBigPicture ();
 };
 
