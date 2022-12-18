@@ -1,3 +1,4 @@
 import {createPosts} from './data.js';
+import {rendering} from './rendering.js';
 
-createPosts();
+rendering(createPosts());
