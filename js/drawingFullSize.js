@@ -61,7 +61,7 @@ function onBigPictureCloseClick () {
 
 const drawingFullSize = (bigPhoto) => {
   openBigPicture = (bigPhoto);
-  closeBigPicture = ();
+  closeBigPicture ();
 };
 
 export { drawingFullSize };
