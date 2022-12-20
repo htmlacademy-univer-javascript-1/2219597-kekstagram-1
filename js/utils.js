@@ -1,14 +1,20 @@
-const getRandomPositiveInteger = (a, b) => {
-  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
-  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
-  const result = Math.random() * (upper - lower + 1) + lower;
-  return Math.floor(result);
+const getRandomInteger = (min, max) => {
+  if (min > max ){
+    [min, max] = [max, min];
+  }
+  if (min < 0) {
+    return -1;
+  }
+  return Math.floor(min + Math.random() * (max + 1 - min));
 };
 
-const checkStringLength = (string, length) => (string.length <= length);
+const getNonExistenObject = (existingObjects, min, max) => {
+  let id = getRandomInteger(min, max);
+  while (existingObjects.includes(id)){
+    id = getRandomInteger(min, max);
+  }
+  existingObjects.push(id);
+  return id;
+};
 
-checkStringLength();
-
-const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
-
-export {getRandomPositiveInteger, getRandomArrayElement};
+export {getRandomInteger, getNonExistenObject};

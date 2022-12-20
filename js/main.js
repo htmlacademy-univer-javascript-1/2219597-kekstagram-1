@@ -1,5 +1,4 @@
-import {createPosts} from './data.js';
-import {rendering} from './rendering.js';
-
-const data = createPosts();
-rendering(data);
+import './pictures.js';
+import './full-picture.js';
+import './upload-form.js';
+import './hashtags-validator.js';
